@@ -1,7 +1,9 @@
 # KNIME workflows
 Solar radiation modeling with KNIME. Increasing environmental model reproducibility and warantability by using scientific workflows
+
+User manual: Workflow to expose solar radiation model details
 --------------------------------------------------------------------------------------------------------------------------
-User manual for: Workflow to expose solar radiation model details
+User manual: Workflow to expose solar radiation model details
 --------------------------------------------------------------------------------------------------------------------------
 Required input data:
 
@@ -31,7 +33,7 @@ Dependencies:
 
 Workflows operates on Microsoft, Mac and Linux operative systems. 
 
-User manual for: Workflow for machine learning parameter-setting assistance
+User manual: Workflow for machine learning parameter-setting assistance
 ------------------------------------------------------------------------------------------------------------------------------
 
 Required input data:
