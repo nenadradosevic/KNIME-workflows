@@ -25,8 +25,10 @@ https://www.knime.com/knime-introductory-course/chapter7/section1/creation-and-u
 The main output: 
 Table with solar radiation potential for all points of interest (input data(1)) togethere with their coordinates 
 
-Dependencies: 
-To succesfully run R snippet nodes R program language needs to be ran in background on local machine 
+Dependencies:
+
+R program language needs to be ran in background of local machine in order to execute R snippet nodes
+
 Input data needs to be in txt and csv file formats.  
 
 User manual for: Workflow for machine learning parameter-setting assistance
