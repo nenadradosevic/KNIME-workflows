@@ -6,7 +6,7 @@ User manual: Minimal Knime Workflow for Solar Analyst
 Required input data:
 
 1) Parameter setting values (csv format file);
-2) Digital Surface Model (DSM in ASCII format)and; 
+2) Digital Surface Model (DSM in ASCII format);and 
 3) Geographic latitude for the study area. 
 
 The main output: 
@@ -23,7 +23,7 @@ Required input data:
 
 1) XYZ coordinates for points of interest (txt file format); 
 2) XYZ coordinates for all points from Digital Surface Model (DSM)(txt file format);
-3) Local time in hours (csv file format); 
+3) Local time in hours (csv file format); and 
 4) Days of year (starting first day with 1.... 365 (csv file format).
 
 Workflow flow variables: 
@@ -42,7 +42,7 @@ The main output:
 Table with solar radiation potential for all points of interest (input data(1)) togethere with their coordinates 
 
 Dependencies:
-1) R program language needs to be ran in background of local machine in order to execute R snippet nodes;
+1) R program language needs to be ran in background of local machine in order to execute R snippet nodes; and
 2) Input data needs to be in txt and csv file formats.  
 
 Workflows operates on Microsoft, Mac and Linux operative systems. 
