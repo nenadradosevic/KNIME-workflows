@@ -28,4 +28,5 @@ Dependencies:
 To succesfully run R snippet nodes R program language needs to be ran in background on local machine 
 Input data needs to be in txt and csv file formats.  
 
-User manual
+User manual for: Workflow for machine learning parameter-setting assistance
+------------------------------------------------------------------------------------------------------------------------------
