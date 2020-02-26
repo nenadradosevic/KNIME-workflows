@@ -17,6 +17,24 @@ Dependencies:
 1) ESRI Solar Analyst integrated via python script. To integrate ESRI ArcGIS to workflow environment please use Anaconda environment. The steps to do this is provided on the following link: https://gisday.wordpress.com/2016/07/18/setting-up-anaconda-pysal-with-arcgis-python-environment/ ; and 
 2) Input data needs to be in csv and ASCII file formats. 
 
+User manual: Extended KNIME workflow integrating Solar Analyst wioth validation 
+------
+
+Required input data:
+
+1) Parameter setting values (csv format file);
+2) Digital Surface Model (DSM), a local path to ASCII file format); 
+3) Geographic latitude for the study area;and
+4) Ground truth solar radiation including tolerance for error difference (csv file format).
+
+The main output: 
+Table with solar radiation data for each raster cell (point) of the DSM and classified Solar Analyst outputs in three categories "Low", "Expected", and "High". 
+
+Dependencies: 
+
+1) ESRI Solar Analyst integrated via python script. To integrate ESRI ArcGIS to workflow environment please use Anaconda environment. The steps to do this is provided on the following link: https://gisday.wordpress.com/2016/07/18/setting-up-anaconda-pysal-with-arcgis-python-environment/ ; and 
+2) Input data needs to be in csv and ASCII file formats. 
+
 User manual: Workflow to expose solar radiation model details
 --------------------------------------------------------------------------------------------------------------------------
 Required input data:
