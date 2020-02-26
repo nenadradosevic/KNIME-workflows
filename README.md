@@ -1,8 +1,22 @@
 # KNIME workflows
 Solar radiation modeling with KNIME. Increasing environmental model reproducibility and warantability by using scientific workflows
 
-User manual: Workflow to expose solar radiation model details
---------------------------------------------------------------------------------------------------------------------------
+User manual: Minimal Knime Workflow for Solar Analyst 
+------------------
+Required input data:
+
+1) Parameter setting values (csv format file);
+2) Digital Surface Model (DSM in ASCII format)and; 
+3) Geographic latitude for the study area. 
+
+The main output: 
+Table with solar radiation data for each raster cell (point) of the DSM
+
+Dependencies: 
+
+1) ESRI Solar Analyst integrated via python script. To integrate ESRI ArcGIS to workflow environment please use Anaconda environment. The steps to do this is provided on the following link: https://gisday.wordpress.com/2016/07/18/setting-up-anaconda-pysal-with-arcgis-python-environment/ ; and 
+2) Input data needs to be in csv and ASCII file formats. 
+
 User manual: Workflow to expose solar radiation model details
 --------------------------------------------------------------------------------------------------------------------------
 Required input data:
@@ -18,7 +32,7 @@ Latitude (Geographic latitude for the area of the interest, positive values for 
 Local variables: 
 1) Solar constant; 
 2) Longitude (Geographic longitude for the area of the interest);
-3) LSTM (Local standard time meridian;
+3) LSTM (Local standard time meridian;and
 4) Azimuth sectors;
 
 How to create and use variables please see the video on the following link: 
@@ -39,7 +53,7 @@ User manual: Workflow for machine learning parameter-setting assistance
 Required input data:
 
 1) Parameter setting values (csv file format);
-2) Geographic latitude (double value) and DSM (ASCII format) of the area of interest;
+2) Geographic latitude (double value) and DSM (ASCII format) of the area of interest; and
 3) Ground truth solar radiaiton data (csv file format).
 
 The main output data: decision tree diagram.
@@ -47,7 +61,7 @@ The main output data: decision tree diagram.
 Dependencies:
 
 1) ESRI Solar Analyst integrated via python script. To integrate ESRI ArcGIS to workflow environment please use Anaconda environment. The steps to do this is provided on the following link: https://gisday.wordpress.com/2016/07/18/setting-up-anaconda-pysal-with-arcgis-python-environment/ ;
-2) R program language needs to be ran in background of local machine in order to execute R snippet nodes;
+2) R program language needs to be ran in background of local machine in order to execute R snippet nodes; and
 2) Input data needs to be in txt and csv file formats.  
 
 Workflows works only on Microsoft operating system because the ESRI ArcGIS installation is only available for Windows. 
