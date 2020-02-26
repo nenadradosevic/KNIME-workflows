@@ -17,6 +17,8 @@ Dependencies:
 1) ESRI Solar Analyst integrated via python script. To integrate ESRI ArcGIS to workflow environment please use Anaconda environment. The steps to do this is provided on the following link: https://gisday.wordpress.com/2016/07/18/setting-up-anaconda-pysal-with-arcgis-python-environment/ ; and 
 2) Input data needs to be in csv and ASCII file formats. 
 
+Note: Workflows can be executed only on computer machines with Microsoft operating system because the ESRI ArcGIS installation is only available for Windows. 
+
 User manual: Extended KNIME workflow integrating Solar Analyst wioth validation 
 ------
 
@@ -24,7 +26,7 @@ Required input data:
 
 1) Parameter setting values (csv format file);
 2) Digital Surface Model (DSM), a local path to ASCII file format); 
-3) Geographic latitude for the study area;and
+3) Geographic latitude for the study area; and
 4) Ground truth solar radiation including tolerance for error difference (csv file format).
 
 The main output: 
@@ -34,6 +36,8 @@ Dependencies:
 
 1) ESRI Solar Analyst integrated via python script. To integrate ESRI ArcGIS to workflow environment please use Anaconda environment. The steps to do this is provided on the following link: https://gisday.wordpress.com/2016/07/18/setting-up-anaconda-pysal-with-arcgis-python-environment/ ; and 
 2) Input data needs to be in csv and ASCII file formats. 
+
+Note: Workflows can be executed only on computer machines with Microsoft operating system because the ESRI ArcGIS installation is only available for Windows. 
 
 User manual: Workflow to expose solar radiation model details
 --------------------------------------------------------------------------------------------------------------------------
@@ -82,4 +86,4 @@ Dependencies:
 2) R program language needs to be ran in background of local machine in order to execute R snippet nodes; and
 2) Input data needs to be in txt and csv file formats.  
 
-Workflows works only on Microsoft operating system because the ESRI ArcGIS installation is only available for Windows. 
+Note: Workflows can be executed only on computer machines with Microsoft operating system because the ESRI ArcGIS installation is only available for Windows. 
