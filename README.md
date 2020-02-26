@@ -29,6 +29,8 @@ Dependencies:
 1) R program language needs to be ran in background of local machine in order to execute R snippet nodes;
 2) Input data needs to be in txt and csv file formats.  
 
+Workflows operates on Microsoft, Mac and Linux operative systems. 
+
 User manual for: Workflow for machine learning parameter-setting assistance
 ------------------------------------------------------------------------------------------------------------------------------
 
@@ -38,11 +40,12 @@ Required input data:
 2) Geographic latitude (double value) and DSM (ASCII format) of the area of interest;
 3) Ground truth solar radiaiton data (csv file format)
 
-The main output data: 
-Decision tree diagram.
+The main output data: decision tree diagram.
 
 Dependencies:
 
 1) ESRI Solar Analyst integrated via python script. To integrate ESRI ArcGIS to workflow environment please use Anaconda environment. The steps to do this is provided on the following link: https://gisday.wordpress.com/2016/07/18/setting-up-anaconda-pysal-with-arcgis-python-environment/
 2) R program language needs to be ran in background of local machine in order to execute R snippet nodes;
 2) Input data needs to be in txt and csv file formats.  
+
+Workflows works only on Microsoft operating system because the ESRI ArcGIS installation is only avalaible for Windows. 
