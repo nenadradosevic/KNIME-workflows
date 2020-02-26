@@ -27,9 +27,8 @@ Table with solar radiation potential for all points of interest (input data(1)) 
 
 Dependencies:
 
-R program language needs to be ran in background of local machine in order to execute R snippet nodes
-
-Input data needs to be in txt and csv file formats.  
+1)R program language needs to be ran in background of local machine in order to execute R snippet nodes
+2)Input data needs to be in txt and csv file formats.  
 
 User manual for: Workflow for machine learning parameter-setting assistance
 ------------------------------------------------------------------------------------------------------------------------------
