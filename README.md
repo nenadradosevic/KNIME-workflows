@@ -1,4 +1,4 @@
-# KNIME-workflows
+# KNIME workflows
 Solar radiation modeling with KNIME. Increasing environmental model reproducibility and warantability by using scientific workflows
 --------------------------------------------------------------------------------------------------------------------------
 User manual for: Workflow to expose solar radiation model details
