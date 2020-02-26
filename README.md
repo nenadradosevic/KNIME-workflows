@@ -19,7 +19,7 @@ Local variables:
 3) LSTM (Local standard time meridian)
 4) Azimuth sectors
 
-To see how to create and use variables please see the video on the following link: 
+How to create and use variables please see the video on the following link: 
 https://www.knime.com/knime-introductory-course/chapter7/section1/creation-and-usage-of-flow-variables
 
 The main output: 
