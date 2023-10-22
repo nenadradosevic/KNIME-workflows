@@ -1,0 +1,48 @@
+import os 
+import datetime, calendar
+from math import pi
+class RunoffModel(DynamicModel):
+  def __init__(self):
+    DynamicModel.__init__(self)
+    setclone("/Users/nenadradosevic/Documents/Pungwe-case-study/Data/input/clone.map")
+    
+  def initial(self):
+    self.CloneMap = "/Users/nenadradosevic/Documents/Pungwe-case-study/Data/input/clone.map"
+    self.DEM_Map = "/Users/nenadradosevic/Documents/Pungwe-case-study/Data/input/dem.map"
+    self.RootFieldMap = "/Users/nenadradosevic/Documents/Pungwe-case-study/Data/input/root_field.map"
+    self.kc_table = "/Users/nenadradosevic/Documents/Pungwe-case-study/Data/input/kc.tbl"
+    
+    # create an infiltration capacity marainZones = spreadzone("rainstat.map", scalar(0), scalar(1))p (mm/6 hours), based on the
+    # soil map
+    self.infiltrationCapacity = lookupscalar(self.kc_table, self.RootFieldMap, flow_variables['SubDepthFLat'], flow_variables['RootDepthFlat'])
+    self.report(self.infiltrationCapacity, "infilcap")
+
+    # generate the local drain direction map on basis of the elevation map
+    self.ldd_Pungwe = lddcreate(self.DEM_Map, 1e31, 1e31, 1e31, 1e31)
+    self.report(self.ldd_Pungwe, "ldd-Pungwe")
+
+    # initialise timeoutput
+    self.runoffTss = TimeoutputTimeseries("runoff", self, self.CloneMap, noHeader=False)
+
+  def dynamic(self):
+    self.rainFall = self.readmap("/Users/nenadradosevic/Documents/Pungwe-case-study/Data/input/forcing/prec/precip00")
+    # compute both runoff and actual infiltration timeinput
+    runoff = accuthresholdflux(self.ldd_Pungwe, self.rainFall,
+         self.infiltrationCapacity)
+    infiltration = accuthresholdstate(self.ldd_Pungwe, self.rainFall,
+         self.infiltrationCapacity)
+
+    # output runoff, converted to m3/s, at each timestep
+    RunOff = runoff / scalar(216000)
+    self.report(RunOff, "runoff")
+    # sampling timeseries for given locations
+    self.runoffTss.sample(RunOff)
+NrOfTimeSteps = 5          
+myModel= RunoffModel()
+dynModel = DynamicFramework(myModel, NrOfTimeSteps)
+dynModel.run()    
+output_table = input_table
+
+#myModel = RunoffModel("self.CloneMap")
+#dynModelFw = DynamicFramework(myModel, lastTimeStep=28, firstTimestep=1)
+#dynModelFw.run()
