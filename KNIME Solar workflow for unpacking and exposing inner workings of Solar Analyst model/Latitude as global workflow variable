@@ -1,0 +1,4 @@
+Latitude: -37.91
+The latitude value of the case study is set up as a global workflow variable. 
+To set the workflow variables, just right-click on the workflow (in the KNIME Explorer) and select Workflow Variables from the context menu. 
+There you can add/edit flow variables.
