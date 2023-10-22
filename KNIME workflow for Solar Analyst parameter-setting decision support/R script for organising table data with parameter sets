@@ -1,0 +1,7 @@
+library(base)
+library(Rserve)
+table_in <- knime.in
+#new_table <- subset(table_in, select = -c(timeConfig))
+times <- 392
+table_transformed <- as.data.frame(lapply(table_in, rep, times))
+knime.out <- table_transformed
