@@ -1,0 +1,88 @@
+# Copy input to output
+#output_table = input_table.copy()
+# import arcpy and solar analyst module
+import pandas as pd
+import simpledbf
+#import pysal as ps
+from simpledbf import Dbf5
+import arcpy 
+from arcpy import env
+from arcpy.sa import *
+import os
+
+#set the environment 
+env.workspace = "H:/Solar_Analyst_Workflow/Output_1"
+arcpy.env.overwriteOutput=True
+
+i = 1
+while os.path.exists("H:/Solar_Analyst_Workflow/Output_1/solar%s" % i):
+    i += 1
+
+#check out the spatial analyst extension in ArcMap
+arcpy.CheckOutExtension("Spatial")
+
+#set the parameter settings 
+RasterDEM = "H:/Solar_Analyst_Workflow/Ascii/rooftops_study1m.asc"
+latitude = flow_variables['Latitude']
+skysize = flow_variables['skysize']
+timeConfig = TimeMultipleDays(flow_variables['timeConfig'])
+dayInterval = 14
+hourInterval = 0.5
+zFactor = 1
+calcDirections = flow_variables['calcDirections']
+zenithDivisions = flow_variables['zenithDivision']
+azimuthDivisions = flow_variables['azimuthDivision']
+diffuseProp = flow_variables['diffuseProp']
+transmittivity = flow_variables['transmittivity']
+outDir_Rad = ""
+outDiff_Rad = ""
+outDirectDur = ""
+
+#execute area solar radiation 
+outGlobalRad = AreaSolarRadiation(RasterDEM, latitude, skysize, timeConfig,
+   dayInterval, hourInterval, "NOINTERVAL", zFactor, "FLAT_SURFACE",
+   calcDirections, zenithDivisions, azimuthDivisions, "STANDARD_OVERCAST_SKY",
+   diffuseProp, transmittivity, outDir_Rad, outDiff_Rad, outDirectDur)
+
+#delete existing file
+#if arcpy.Exists(jan_roof):
+   # arcpy.Delete_management(jan_roof)
+    
+#save solar map 
+#if arcpy.Exists("C:/Datasource/ArcGISfolder/output/jan_rad"):
+    #arcpy.Delete_management("C:/Datasource/ArcGISfolder/output/jan_rad")
+outGlobalRad.save("H:/Solar_Analyst_Workflow/Output_1/solar%s" % i)
+
+#set local variables
+#inRaster = "C:/Datasource/ArcGISfolder/output/jan_rad"
+#outASCII = "C:/Datasource/ArcGISfolder/output/Ascii/jan_rad_ascii.asc"
+
+#Execute RasterToASCII
+#arcpy.RasterToASCII_conversion(inRaster, outASCII)
+
+#Set local variables
+roof_solar_raster = outGlobalRad
+outPoint = "H:/Solar_Analyst_Workflow/Output_1/solar_points.shp" 
+field = "VALUE"
+
+# Execute RasterToPoint
+arcpy.RasterToPoint_conversion(roof_solar_raster, outPoint, field)
+
+# Set local variables
+in_features = "solar_points.shp" 
+
+# Set local variables
+#in_data= "solar_points.shp"
+#in_features = "solar_points_XY.shp"
+
+# Copying data to preserve original dataset
+# Execute Copy
+#arcpy.Copy_management(in_data, in_features)
+
+# Execute AddXY
+#arcpy.AddXY_management(in_features)
+
+#output table from DBF to DATA FRAME
+dbf = Dbf5('H:/Solar_Analyst_Workflow/Output_1/solar_points.dbf')
+df = dbf.to_dataframe()
+output_table = df
