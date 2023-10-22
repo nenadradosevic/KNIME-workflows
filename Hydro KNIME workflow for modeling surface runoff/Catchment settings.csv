@@ -1,0 +1,13 @@
+Map,File_path
+CloneMap,/Users/nenadradosevic/Documents/Pungwe-case-study/Data/input/clone.map
+DemMap,/Users/nenadradosevic/Documents/Pungwe-case-study/Data/input/dem.map
+SlopeMap,/Users/nenadradosevic/Documents/Pungwe-case-study/Data/input/slope.map
+StationsMap,/Users/nenadradosevic/Documents/Pungwe-case-study/Data/input/locations.map
+RootFieldMap,/Users/nenadradosevic/Documents/Pungwe-case-study/Data/input/root_field.map
+RootSaturatedMap,/Users/nenadradosevic/Documents/Pungwe-case-study/Data/input/root_sat.map
+RootDryMap,/Users/nenadradosevic/Documents/Pungwe-case-study/Data/input/root_dry.map
+RootWiltMap,/Users/nenadradosevic/Documents/Pungwe-case-study/Data/input/root_wilt.map
+RootKsatMap,/Users/nenadradosevic/Documents/Pungwe-case-study/Data/input/root_ksat.map
+SubSatMap,/Users/nenadradosevic/Documents/Pungwe-case-study/Data/input/sub_sat.map
+SubFieldMap,/Users/nenadradosevic/Documents/Pungwe-case-study/Data/input/sub_field.map
+SubKsatMap,/Users/nenadradosevic/Documents/Pungwe-case-study/Data/input/sub_ksat.map
